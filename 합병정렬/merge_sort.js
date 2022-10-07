@@ -1,4 +1,5 @@
 //1. 분할
+//2. 정렬
 function splitMerge(arr) {
   if (arr.length <= 1) return arr;
   let mid = Math.floor(arr.length / 2)
@@ -8,7 +9,6 @@ function splitMerge(arr) {
 }
 splitMerge([5, 2, 40, 20])
 
-//2. 정렬
 //3. 합병
 function merge(arr1, arr2) {
   let result = [];

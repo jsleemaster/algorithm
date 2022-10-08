@@ -1,5 +1,5 @@
 //1. 분할
-//2. 정렬
+//2. 정렬 재귀 활용
 function splitMerge(arr) {
   if (arr.length <= 1) return arr;
   let mid = Math.floor(arr.length / 2)

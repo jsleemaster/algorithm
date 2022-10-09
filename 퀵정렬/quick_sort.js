@@ -1,4 +1,4 @@
-//스왑이 될 idx를 주는 함수
+//중간 지점 idx를 주는 함수
 function pivot(arr, start = 0, end = arr.length - 1) {
   function swap(arr, idx1, idx2) {
     [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
@@ -14,4 +14,13 @@ function pivot(arr, start = 0, end = arr.length - 1) {
   swap(arr, swapIdx, start)
   return swapIdx;
 }
-pivot([7, 3, 6, 4, 1, 8, 2])
+function quickSort(arr, left = 0, right = arr.length - 1) {
+  if (left < right) {
+    let pivotIdx = pivot(arr, left, right)
+    //left
+    quickSort(arr, left, pivotIdx - 1)
+    //right
+    quickSort(arr, pivotIdx + 1, right)
+  }
+  return arr
+}

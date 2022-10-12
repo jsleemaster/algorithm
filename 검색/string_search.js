@@ -1,3 +1,4 @@
+//같은 글자가 몇개 있는지 세기
 function naiveSearch(long, short){
     var count = 0;
     for(var i = 0; i < long.length; i++){

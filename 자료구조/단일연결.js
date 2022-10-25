@@ -74,6 +74,14 @@ class SinglyLinkedList {
         }
         return current;
     }
+    set(index, val) {
+        let foundValue = this.get(index);
+        if (foundValue) {
+            foundValue = val;
+            return true;
+        }
+        return false;
+    }
 }
 
 var list = new SinglyLinkedList()

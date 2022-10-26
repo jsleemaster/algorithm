@@ -75,9 +75,9 @@ class SinglyLinkedList {
         return current;
     }
     set(index, val) {
-        let foundValue = this.get(index);
-        if (foundValue) {
-            foundValue = val;
+        let foundNode = this.get(index);
+        if (foundNode) {
+            foundNode = val;
             return true;
         }
         return false;

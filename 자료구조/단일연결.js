@@ -52,7 +52,7 @@ class SinglyLinkedList {
         }
         return currentHead;
     }
-    unshift() {
+    unshift(val) {
         var newNode = new Node(val);
         if (!this.head) {
             this.head = newNode;
@@ -81,6 +81,19 @@ class SinglyLinkedList {
             return true;
         }
         return false;
+    }
+    insert(index, val) {
+        if (index < 0 || index > this.length) return false;
+        if (index === this.length) return !!this.push(val);
+        if (index === 0) return !!this.unshift(val);
+
+        let newNode = new Node(val);
+        let prev = this.get(index - 1);
+        let tmp = prev.next;
+        prev.next = newNode;
+        newNode.next = tmp;
+        this.length++;
+        return true;
     }
 }
 

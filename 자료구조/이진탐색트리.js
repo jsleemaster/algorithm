@@ -42,4 +42,34 @@ class BST {
 
     }
   }
+  find(value) { //값 찾기
+    if (this.root === null) return false;
+    let current = this.root;
+    let found = false;
+    while (current && !found) {
+      if (value < current.value) {
+        current = current.left
+      } else if (value > current.value) {
+        current = current.right
+      } else {
+        found = true;
+      }
+    }
+    if (!found) return undefined;
+    return current;
+  }
+  contains(value) { //값 찾기 true/ false
+    if (this.root === null) return false;
+    let current = this.root;
+    while (current) {
+      if (value < current.value) {
+        current = current.left
+      } else if (value > current.value) {
+        current = current.right
+      } else {
+        return true;
+      }
+    }
+    return false;
+  }
 }

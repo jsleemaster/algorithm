@@ -9,7 +9,7 @@ class Node {
   }
 }
 
-//Binary Search Tree
+//Binary Search Tree - 이진 탐색트리
 class BST {
   constructor() {
     this.root = null;
@@ -71,5 +71,29 @@ class BST {
       }
     }
     return false;
+  }
+  /** 트리순회 - 정렬이 되어있지 않았을때 순회하는 방법
+    * 순회방식 (재귀 이용)
+    * - 너비 우선 : 가로(수평)
+    * - 깊이 우선 : 세로(수직)
+    * 깊이 우선 3가지 방식
+    * 1.정위 순회 : 아래 깊이를 훑으며 내려갔다 올라갔다 반복
+    * 2.전위 순회 : 위에서 시작
+    * 3.후위 순회 : 아래 너비를 훑으며 올라옴
+  **/
+  // 너비 우선 탐색
+  BFS() {
+    let node = this.root;
+    let data = [];
+    let queue = [];
+
+    queue.push(node);
+    while (queue.length) {
+      node = queue.shift();
+      data.push(node.value);
+      if (node.left) queue.push(node.left)
+      if (node.right) queue.push(node.right)
+    }
+    return data
   }
 }

@@ -83,7 +83,15 @@ class BST {
     * 3.후위 순회 : 아래 너비를 훑으며 올라옴
   **/
 
-  // 너비 우선 탐색
+  //예제
+  //         10
+  //     6      15
+  //   3   8       20
+
+  /**
+   * 너비 우선 탐색
+   * @returns [10,6,15,3,8,20]
+   */
   BFS() { //breadth frist search
     let node = this.root;
     let data = [];
@@ -98,7 +106,11 @@ class BST {
     }
     return data
   }
-  // 깊이 우선 탐색 - 전위 순회
+  // 
+  /**
+   * 깊이 우선 탐색 - 전위 순회
+   * @returns [10,6,3,8,15,20]
+   */
   DFSPreOrder() {
     let data = [];
     //순서가 중요!
@@ -111,13 +123,30 @@ class BST {
     traveres(this.root);
     return data
   }
-  // 깊이 우선 탐색 - 후위 순회
+  /**
+   * 깊이 우선 탐색 - 후위 순회
+   * @returns [3,8,6,20,15,10]
+   */
   DFSPostOrder() {
     let data = [];
     function traveres(node) {
       if (node.left) traveres(node.left)
       if (node.right) traveres(node.right)
       data.push(node.value)
+    }
+    traveres(this.root);
+    return data;
+  }
+  /**
+   * 깊이 우선 탐색 - 정위 순회
+   * @returns [3,6,8,10,15,20]
+   */
+  DFSInOrder() {
+    let data = [];
+    function traveres(node) {
+      if (node.left) traveres(node.left)
+      data.push(node.value)
+      if (node.right) traveres(node.right)
     }
     traveres(this.root);
     return data;

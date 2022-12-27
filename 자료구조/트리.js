@@ -101,12 +101,25 @@ class BST {
   // 깊이 우선 탐색 - 전위 순회
   DFSPreOrder() {
     let data = [];
+    //순서가 중요!
     function traveres(node) {
       data.push(node.value);
+      // 왼쪽을 다 순회 한후 오른쪽을 순회한다
       if (node.left) traveres(node.left);
       if (node.right) traveres(node.right);
     }
     traveres(this.root);
     return data
+  }
+  // 깊이 우선 탐색 - 후위 순회
+  DFSPostOrder() {
+    let data = [];
+    function traveres(node) {
+      if (node.left) traveres(node.left)
+      if (node.right) traveres(node.right)
+      data.push(node.value)
+    }
+    traveres(this.root);
+    return data;
   }
 }

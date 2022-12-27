@@ -76,13 +76,15 @@ class BST {
     * 순회방식 (재귀 이용)
     * - 너비 우선 : 가로(수평)
     * - 깊이 우선 : 세로(수직)
+    * 
     * 깊이 우선 3가지 방식
     * 1.정위 순회 : 아래 깊이를 훑으며 내려갔다 올라갔다 반복
     * 2.전위 순회 : 위에서 시작
     * 3.후위 순회 : 아래 너비를 훑으며 올라옴
   **/
+
   // 너비 우선 탐색
-  BFS() {
+  BFS() { //breadth frist search
     let node = this.root;
     let data = [];
     let queue = [];
@@ -94,6 +96,17 @@ class BST {
       if (node.left) queue.push(node.left)
       if (node.right) queue.push(node.right)
     }
+    return data
+  }
+  // 깊이 우선 탐색 - 전위 순회
+  DFSPreOrder() {
+    let data = [];
+    function traveres(node) {
+      data.push(node.value);
+      if (node.left) traveres(node.left);
+      if (node.right) traveres(node.right);
+    }
+    traveres(this.root);
     return data
   }
 }

@@ -29,4 +29,10 @@ class MaxBinaryHeap {
 
     }
   }
+  extractMax() { // 삭제
+    //1. 자리교체
+    const max = this.values[0]
+    const end = this.values.pop();
+    this.values[0] = end
+  }
 }

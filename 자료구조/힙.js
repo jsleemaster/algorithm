@@ -5,6 +5,7 @@
 // 왼쪽은 인덱스(n)에 2n+1 하면 자식의 인덱스가 나옴
 // 오른쪽은 인덱스(n)에 2n+2 하면 자식의 인덱스가 나옴
 
+//최대 이진힙 사용 
 class MaxBinaryHeap {
   constructor() {
     this.values = []
@@ -52,7 +53,7 @@ class MaxBinaryHeap {
 
       if (leftChildIdx < length) {
         leftChild = this.values[leftChildIdx];
-        if (leftChild < element) {
+        if (leftChild > element) {
           swap = leftChildIdx;
         }
       }

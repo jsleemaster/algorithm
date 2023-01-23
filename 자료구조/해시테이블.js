@@ -1,4 +1,6 @@
-//개별 체이닝 사용
+
+// 직선 탐색법과 개별체이닝이 있지만 이 연습 강의는 개별체이닝을 사용했다.
+// 개별 체이닝 사용
 class Hash {
   constructor(size = 53) { // 소수 값을 위한 53
     this.keyMap = new Array(size);

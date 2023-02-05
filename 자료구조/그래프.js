@@ -47,4 +47,22 @@ class Graph {
     delete this.adjacenyList[vertex]
 
   }
+  // DFS 그래프 재귀용법
+  depthFirstRecursive(start) {
+    const result = []
+    const visited = {};
+    const adjacenyList = this.adjacenyList;
+    // 시작 지점에서 시작
+    (function dfs(vertex) {
+      if (!vertex) return null;
+      visited[vertex] = true;
+      result.push(vertex);
+
+      adjacenyList[vertex].forEach(neighbor => {
+        if (!visited[neighbor]) {
+          return dfs(neighbor);
+        }
+      })
+    })(start)
+  }
 }

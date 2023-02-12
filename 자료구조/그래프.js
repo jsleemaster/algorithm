@@ -47,7 +47,7 @@ class Graph {
     delete this.adjacenyList[vertex]
 
   }
-  // DFS 그래프 재귀용법
+  // DFS 깊이 탐색 그래프 재귀용법
   depthFirstRecursive(start) {
     const result = []
     const visited = {};
@@ -84,6 +84,37 @@ class Graph {
         if (!visited[neighbor]) {
           visited[neighbor] = true;
           stack.push(neighbor);
+        }
+      })
+    }
+    return result;
+  }
+  // BFS 넓이 탐색 그래프  
+  breadthFirst(start) {
+    const queue = [start];
+    const result = [];
+    const visited = {};
+    let currentVertex;
+    visited[start] = true;
+
+    while (queue.length) {
+      currentVertex = queue.shift();
+      result.push(currentVertex);
+      //  A
+      // / \
+      // B   C
+      // |   |
+      // E - F
+      //  \ /
+      //   G
+
+      // 아래는 A,C,B,F,E,G
+      // this.adjacenyList[currentVertex].slice().reverse().forEach(neighbor => {
+      // 아래는 A,B,C,E,F,G
+      this.adjacenyList[currentVertex].forEach(neighbor => {
+        if (!visited[neighbor]) {
+          visited[neighbor] = true;
+          queue.push(neighbor);
         }
       })
     }

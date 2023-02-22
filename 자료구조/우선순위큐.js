@@ -1,3 +1,10 @@
+class Node {
+  constructor(val, priority) {
+    this.val = val;
+    this.priority = priority;
+  }
+}
+
 // 최소이진힙 사용 
 class PriotyQueue {
   constructor() {
@@ -63,11 +70,5 @@ class PriotyQueue {
       idx = swap;
     }
 
-  }
-}
-class Node {
-  constructor(val, priority) {
-    this.val = val;
-    this.priority = priority;
   }
 }

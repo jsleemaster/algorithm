@@ -10,7 +10,6 @@ const solution = (num) => {
 
   for (let i = 2; i <= sqrt; i++) {
     if (arr[i] === true) {
-      2
       for (let j = 2; i * j <= num; j++) {
         arr[i * j] = false;
       }

@@ -6,5 +6,5 @@ const fib = (number) => {
   for (let i = 3; i < number; i++) {
     value[i] = value[i - 1] + value[i - 2];
   }
-  return value[n];
+  return value[number];
 }

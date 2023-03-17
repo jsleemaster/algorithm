@@ -63,8 +63,11 @@ function solution(maps) {
   }
 
   const d1 = bfs(startX, startY, lbX, lbY)
+
   if (d1 === -1) return -1;
+
   const d2 = bfs(lbX, lbY, endX, endY)
+
   if (d2 === -1) return -1;
 
   return d1 + d2;

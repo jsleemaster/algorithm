@@ -41,7 +41,6 @@ suffixString = "ginkgo"
 function approximateMatching(text, prefixString, suffixString) {
   let prefixScore = 0;
   let suffixScore = 0;
-  let textScore = 0;
   let maxTextScore = 0;
   let result = '';
 
@@ -76,6 +75,6 @@ function approximateMatching(text, prefixString, suffixString) {
       }
     }
   }
-
   return result;
 }
+approximateMatching("engine", "raven", "ginkgo")

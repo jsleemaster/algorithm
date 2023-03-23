@@ -17,3 +17,28 @@
    Calculate the minimum number of moves required to modify the string to a good form.
 
  */
+
+function minMoves(s) {
+  let moves = 0;
+  let n = s.length;
+
+  // handle first character
+  if (s[0] != s[1]) {
+    moves += Math.abs(s.charCodeAt(1) - s.charCodeAt(0));
+  }
+
+  // handle middle characters
+  for (let i = 1; i < n - 1; i++) {
+    let diff = Math.abs(s.charCodeAt(i + 1) - s.charCodeAt(i));
+    if (diff > 1) {
+      moves += diff - 1;
+    }
+  }
+
+  // handle last character
+  if (s[n - 1] != s[n - 2]) {
+    moves += Math.abs(s.charCodeAt(n - 2) - s.charCodeAt(n - 1));
+  }
+
+  return moves;
+}

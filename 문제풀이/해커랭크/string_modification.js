@@ -42,3 +42,46 @@ function minMoves(s) {
 
   return moves;
 }
+
+
+//2안
+function minMovesTwo(s) {
+  let n = s.length;
+  let ans = Number.MAX_SAFE_INTEGER;
+
+  // Check if first and last characters match
+  if (s.charAt(0) == s.charAt(n - 1)) {
+    let curr = 1;
+    let prev = 0;
+    let count = 0;
+    // Count the number of moves required to modify the string
+    while (curr < n) {
+      if (s.charAt(curr) == s.charAt(prev)) {
+        curr++;
+      } else {
+        count++;
+        prev = curr - 1;
+      }
+    }
+    ans = Math.min(ans, count);
+  }
+
+  // Check if first and last characters don't match
+  if (s.charAt(0) != s.charAt(n - 1)) {
+    let curr = 1;
+    let prev = 0;
+    let count = 1;
+    // Count the number of moves required to modify the string
+    while (curr < n) {
+      if (s.charAt(curr) == s.charAt(prev)) {
+        curr++;
+      } else {
+        count++;
+        prev = curr - 1;
+      }
+    }
+    ans = Math.min(ans, count);
+  }
+
+  return ans;
+}

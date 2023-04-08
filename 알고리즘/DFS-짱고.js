@@ -20,15 +20,15 @@ const solution = () => {
     7: [6, 8],
     8: [1, 7],
   };
-  const discovered = Array(9).fill(false);
-    dfs(graph, 1, discovered);
+  const visited = Array(9).fill(false);
+  dfs(graph, 1, visited);
   };
-  const dfs = (graph, vertext, discovered) => {
-    discovered[vertext] = true;
+const dfs = (graph, vertext, visited) => {
+  visited[vertext] = true;
 
     for (const next of graph[vertext]) {
-      if (!discovered[next]) {
-        dfs(graph, next, discovered);
+      if (!visited[next]) {
+        dfs(graph, next, visited);
       }
     }
 };

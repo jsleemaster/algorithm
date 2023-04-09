@@ -15,7 +15,15 @@ const solution = (num) => {
       }
     }
   }
-  console.log(arr.filter((v) => v).length);
+
+  //에라토스테네스의 체 2
+  let sieve = new Array(3001).fill(true);
+  for (let i = 2; i * i < sieve.length; i += 1) {
+    if (!sieve[i]) continue;
+    for (let j = i + i; j < sieve.length; j += i) {
+      sieve[j] = false;
+    }
+  }
 }
 
 solution(16)

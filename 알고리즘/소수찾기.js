@@ -24,6 +24,7 @@ const solution = (num) => {
       sieve[j] = false;
     }
   }
+  console.log(sieve, arr)
 }
 
 solution(16)

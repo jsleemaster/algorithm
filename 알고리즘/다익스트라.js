@@ -58,7 +58,6 @@ class weightGraph {
       }
       previous[vertex] = null;
     }
-    // as long as there is something to visit
     //2. 방문할 것이 남아 있는 지 체크
     while (nodes.values.length) {
       smallest = nodes.dequeue().val;

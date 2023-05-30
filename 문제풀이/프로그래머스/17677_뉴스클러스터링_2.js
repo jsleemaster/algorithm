@@ -29,19 +29,15 @@ function solution(str1, str2) {
   let Alen = 0;
   let Blen = 0;
   let Ilen = 0;
-
-  if (Object.values(A).length === 0) {
-  } else {
+  if (Object.values(A).length !== 0) {
     Alen = Object.values(A).reduce((a, b) => a + b)
-  }
-  if (Object.values(B).length === 0) {
-  } else {
+  } 
+  if (Object.values(B).length !== 0) {
     Blen = Object.values(B).reduce((a, b) => a + b)
   }
-  if (Object.values(inter).length === 0) {
-  } else {
+  if (Object.values(inter).length !== 0) {
     Ilen = Object.values(inter).reduce((a, b) => a + b)
-  }
+  } 
   return Math.floor(Ilen / (Alen + Blen - Ilen) * 65536);
 }
 

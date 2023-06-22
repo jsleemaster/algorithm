@@ -11,8 +11,7 @@ function solution(order) {
     idx++;
     answer.push(i)
     while (assistance.length && order[idx] === assistance.at(-1)) {
-      const last = assistance.pop()
-      answer.push(last)
+      answer.push(assistance.pop())
       idx++;
     }
   }

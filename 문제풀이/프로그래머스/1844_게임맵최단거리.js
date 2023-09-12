@@ -11,9 +11,7 @@ function solution(maps) {
   const visited = Array.from(Array(row), () => Array(col).fill(false))
   const queue = [[0, 0, 0]];
 
-  const check = (nx, ny) => {
-    return 0 <= nx && nx < row && 0 <= ny && ny < col
-  }
+  const check = (nx, ny) => 0 <= nx && nx < row && 0 <= ny && ny < col
 
   while (queue.length) {
     const [x, y, cnt] = queue.shift();
